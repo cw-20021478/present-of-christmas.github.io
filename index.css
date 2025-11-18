@@ -1105,15 +1105,29 @@ body::before {
   }
 
   .add-participant-section {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 8px;
   }
 
   .participant-input {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
   }
 
   .add-btn {
-    width: 100%;
+    flex-shrink: 0;
+    padding: 12px 20px;
+    white-space: nowrap;
+  }
+
+  .modal-footer {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    flex: 1;
   }
 
   .drawn-section {
@@ -1251,11 +1265,14 @@ body::before {
 
   .modal-footer {
     padding: 15px;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 8px;
   }
 
   .cancel-btn,
   .save-btn {
-    width: 100%;
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }
