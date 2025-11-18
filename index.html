@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>크리스마스 선물 교환식 - 이름 뽑기</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 참가자 수정 버튼 -->
+      <button class="edit-participants-btn" id="editParticipantsBtn">
+        👥 참가자 수정
+      </button>
+
+      <!-- 초기화 버튼 -->
+      <button class="reset-btn" id="resetBtn">🔄 초기화</button>
+
+      <!-- 참가자 수정 모달 -->
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>🎄 참가자 목록 수정</h2>
+            <button class="modal-close" id="modalClose">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="add-participant-section">
+              <input
+                type="text"
+                id="newParticipantInput"
+                placeholder="참가자 이름을 입력하세요"
+                class="participant-input"
+              />
+              <button class="add-btn" id="addParticipantBtn">추가</button>
+            </div>
+            <div class="participants-edit-list" id="participantsEditList"></div>
+          </div>
+          <div class="modal-footer">
+            <button class="cancel-btn" id="cancelBtn">취소</button>
+            <button class="save-btn" id="saveBtn">저장</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 가챠 기계 -->
+      <div class="gacha-machine">
+        <!-- 크리스마스 장식 -->
+        <div class="christmas-decoration top-left">⭐</div>
+        <div class="christmas-decoration top-right">❄️</div>
+
+        <!-- 기계 본체 -->
+        <div class="machine-body">
+          <!-- 상단 투명 창 -->
+          <div class="machine-window">
+            <div class="window-glass">
+              <!-- 물음표 표시 -->
+              <div class="question-mark">?</div>
+            </div>
+            <div class="window-frame"></div>
+          </div>
+
+          <!-- 크리스마스 리본 -->
+          <div class="ribbon ribbon-top">🎀</div>
+          <div class="ribbon ribbon-left">🎀</div>
+          <div class="ribbon ribbon-right">🎀</div>
+
+          <!-- 추출구 -->
+          <div class="outlet">
+            <div class="outlet-light" id="outletLight"></div>
+            <div class="outlet-hole"></div>
+            <div class="capsule" id="capsule">
+              <div class="capsule-top">
+                <div class="capsule-light" id="capsuleLight"></div>
+              </div>
+              <div class="capsule-bottom"></div>
+            </div>
+            <div class="paper" id="paper">
+              <span id="nameDisplay"></span>
+            </div>
+          </div>
+
+          <!-- 크리스마스 별 장식 -->
+          <div class="star-decoration">✨</div>
+        </div>
+
+        <!-- 발판 -->
+        <div class="machine-base">
+          <div class="base-shadow"></div>
+        </div>
+      </div>
+
+      <!-- 뽑기 버튼 -->
+      <button class="draw-btn" id="drawBtn">🎁 이름 뽑기</button>
+
+      <!-- 참가자 목록 -->
+      <div class="participants-section">
+        <h2>참가자 목록</h2>
+        <div class="participants-list" id="participantsList"></div>
+      </div>
+
+      <!-- 뽑힌 이름 목록 -->
+      <div class="drawn-section">
+        <h2>뽑힌 이름</h2>
+        <div class="drawn-list" id="drawnList"></div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
